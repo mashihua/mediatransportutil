@@ -209,7 +209,7 @@ func GetExternalIP(ctx context.Context, stunServers []string, localAddr net.Addr
 	for _, ss := range stunServers {
 		var ipAddr string
 		ipAddr, err = findExternalIP(ctx1, ss, localAddr)
-		if err == nil {
+		if err != nil {
 			return ipAddr, nil
 		}
 	}
